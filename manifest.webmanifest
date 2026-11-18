@@ -1,0 +1,30 @@
+{
+ "name": "압구정중 · 선화예중 2학년 천재(소) 7과",
+ "short_name": "선화예중2 천재(소) 7과",
+ "description": "압구정 다른학원 · 압구정중 · 선화예중 2학년 천재(소) 7과",
+ "lang": "ko",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#eef1f6",
+ "theme_color": "#1d4e89",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-maskable.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
