@@ -146,7 +146,7 @@ table.t tr:first-child th, table.t th:first-child { background: var(--bk-soft); 
 .pi .sol b { font-weight: 700; }
 .pi .sol b.o { color: var(--ok); } .pi .sol b.x { color: var(--bad); }
 
-/* 본문 주석 */
+/* 본문 문장 풀이 */
 .sn { padding: 13px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 30px 1fr; }
 .sn > i { font-style: normal; font-weight: 900; color: var(--bk); font-size: 13px; padding-top: 3px; }
 .sn .en { font-size: 16.5px; line-height: 1.6; }
@@ -343,7 +343,7 @@ function startApp(DATA) {
         return `<details class="c" data-d="c-${l.no}-${ci}"${open}><summary><em>${c.mark}</em><b>${c.name}</b><u>${done} / ${c.items.length}</u></summary><div class="cb">${subs}<div class="ph"><span>바로 확인</span><span>알맞은 것을 누르세요</span></div>${c.items.map((it, ii) => practice(l.no, ci, ii, it)).join('')}</div></details>`;
       }).join('');
       const r = l.reading, allKo = S.ko[`all-${l.no}`];
-      const rd = !r ? '' : `<details class="c" id="R${l.no}" data-d="r-${l.no}"${S.show[`r-${l.no}`] ? ' open' : ''}><summary><em>R</em><b>${l.no}과 본문 주석</b><u>${r.sents.length}문장</u></summary><div class="cb"><div class="ph"><span>${r.ko}</span><button class="tg" data-allko="${l.no}">${allKo ? '해석 숨기기' : '해석 모두 보기'}</button></div>${r.sents.map(s => `<div class="sn"><i>${s.no}</i><div><div class="en">${s.en}</div><div class="nt">${s.notes.map(n => `<span>${n}</span>`).join('')}</div>${allKo || S.ko[`${l.no}-${s.no}`] ? `<div class="ko">${s.ko}</div>` : `<button class="tg" style="margin-top:7px" data-ko="${l.no}-${s.no}">해석 보기</button>`}</div></div>`).join('')}</div></details>`;
+      const rd = !r ? '' : `<details class="c" id="R${l.no}" data-d="r-${l.no}"${S.show[`r-${l.no}`] ? ' open' : ''}><summary><em>R</em><b>${l.no}과 본문 문장 풀이</b><u>${r.sents.length}문장</u></summary><div class="cb"><div class="ph"><span>${r.ko}</span><button class="tg" data-allko="${l.no}">${allKo ? '해석 숨기기' : '해석 모두 보기'}</button></div>${r.sents.map(s => `<div class="sn"><i>${s.no}</i><div><div class="en">${s.en}</div><div class="nt">${s.notes.map(n => `<span>${n}</span>`).join('')}</div>${allKo || S.ko[`${l.no}-${s.no}`] ? `<div class="ko">${s.ko}</div>` : `<button class="tg" style="margin-top:7px" data-ko="${l.no}-${s.no}">해석 보기</button>`}</div></div>`).join('')}</div></details>`;
       return `<div class="lh" id="L${l.no}"><i>${l.no}</i><div><b>${l.title}</b><span>${l.ko}</span></div></div>${cs}${rd}`;
     }).join('');
     app.innerHTML = `<nav class="jump">${jump}</nav>${body}`;
